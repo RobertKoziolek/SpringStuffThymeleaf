@@ -25,7 +25,7 @@
     <div class="collapse" id="addUser">
         <div class="jumbotron">
             <h1>Add user</h1>
-            <form class="form-horizontal" method="post" th:action="@{/users/add}" th:object="${user}">
+            <form class="form-horizontal" method="post" th:action="@{/users/add}" th:object="${userRequest}">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="name">Name:</label>
                     <div class="col-sm-10">
@@ -63,7 +63,11 @@
             <th:block th:each="user : ${users}">
                 <tr>
                     <td th:text="${user.id}">id</td>
-                    <td th:text="${user.name}"></td>
+                    <td>
+                        <a th:href="@{/users/__${user.id}__}">
+                            <span th:text="${user.name}">name</span>
+                        </a>
+                    </td>
                     <td th:text="${user.status}"></td>
                     <td th:text="${user.email}">email</td>
                     <td th:text="${user.age}">age</td>

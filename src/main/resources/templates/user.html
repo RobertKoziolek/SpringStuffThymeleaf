@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Error page</title>
+    <title>Users</title>
     <link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" rel="stylesheet">
     <script crossorigin="anonymous" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -14,43 +14,37 @@
 </head>
 <body>
 <div class="container">
-    <header th:replace="header_fragment.html :: header (activePage='error')"></header>
-    <h1>Error page!</h1>
-    <div class="alert alert-danger" role="alert">
+    <header th:replace="header_fragment.html :: header (activePage='users')"></header>
+    <h1 th:text="${user.name}">User</h1>
+    <p>
+        Below you can find detailed info about the user.
+    </p>
+    <div class="alert alert-primary" role="alert">
         <table class="table">
+            <thead class="thead-dark">
             <tr>
-                <td>Timestamp</td>
-                <td th:text="${timestamp}"></td>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Status</th>
+                <th scope="col">Email</th>
+                <th scope="col">Age</th>
+                <th scope="col">Items</th>
             </tr>
+            </thead>
+            <tbody>
             <tr>
-                <td>Path</td>
-                <td th:text="${path}"></td>
+                <td th:text="${user.id}">id</td>
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.status}"></td>
+                <td th:text="${user.email}">email</td>
+                <td th:text="${user.age}">age</td>
+                <td>
+                        <span th:each="i, iterStat : ${user.items}"
+                              th:text="!${iterStat.last} ? ${i.name} + ', ': ${i.name}"></span>
+                </td>
             </tr>
-            <tr>
-                <td>Error</td>
-                <td th:text="${error}"></td>
-            </tr>
-            <tr>
-                <td>Status code</td>
-                <td th:text="${status}"></td>
-            </tr>
-            <tr>
-                <td>Message</td>
-                <td th:text="${message}"></td>
-            </tr>
+            </tbody>
         </table>
-    </div>
-    <div th:if="${trace != null}">
-        <p>
-            <button aria-controls="showTrace" aria-expanded="false" class="btn btn-primary" data-target="#showTrace"
-                    data-toggle="collapse" type="button">Show Trace
-            </button>
-        </p>
-        <div class="collapse" id="showTrace">
-            <div class="jumbotron">
-                <pre th:text="${trace}"></pre>
-            </div>
-        </div>
     </div>
 </div>
 </body>

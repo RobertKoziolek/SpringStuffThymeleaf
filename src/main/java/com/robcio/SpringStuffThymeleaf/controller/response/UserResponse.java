@@ -1,7 +1,6 @@
-package com.robcio.SpringStuffThymeleaf.dto;
+package com.robcio.SpringStuffThymeleaf.controller.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.robcio.SpringStuffThymeleaf.dto.enumeration.UserStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +9,7 @@ import java.util.Set;
 @Getter
 @Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User {
+public class UserResponse {
     private Long id;
     private String name;
     private String email;

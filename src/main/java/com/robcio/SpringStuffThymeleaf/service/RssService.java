@@ -1,7 +1,7 @@
 package com.robcio.SpringStuffThymeleaf.service;
 
 import com.robcio.SpringStuffThymeleaf.client.RssClient;
-import com.robcio.SpringStuffThymeleaf.dto.FeedModel;
+import com.robcio.SpringStuffThymeleaf.controller.response.FeedModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

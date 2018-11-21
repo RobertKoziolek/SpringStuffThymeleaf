@@ -1,7 +1,7 @@
 package com.robcio.SpringStuffThymeleaf.client;
 
 import com.robcio.SpringStuffThymeleaf.configuration.RssSimplifierRestTemplateConfiguration;
-import com.robcio.SpringStuffThymeleaf.dto.FeedModel;
+import com.robcio.SpringStuffThymeleaf.controller.response.FeedModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.ParameterizedTypeReference;

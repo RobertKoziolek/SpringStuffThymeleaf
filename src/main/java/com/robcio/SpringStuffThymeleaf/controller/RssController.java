@@ -1,6 +1,6 @@
 package com.robcio.SpringStuffThymeleaf.controller;
 
-import com.robcio.SpringStuffThymeleaf.dto.FeedModel;
+import com.robcio.SpringStuffThymeleaf.controller.response.FeedModel;
 import com.robcio.SpringStuffThymeleaf.service.RssService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

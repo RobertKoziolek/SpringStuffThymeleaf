@@ -21,6 +21,10 @@ public class UserRestTemplateConfiguration {
     private String allUsers;
 
     @Getter
+    @Value("${userstuff.users.getOne}")
+    private String user;
+
+    @Getter
     @Value("${userstuff.users.addUser}")
     private String addUser;
 
