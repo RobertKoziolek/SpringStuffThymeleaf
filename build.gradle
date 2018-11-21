@@ -27,5 +27,7 @@ repositories {
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
 	implementation('org.springframework.boot:spring-boot-starter-web')
+	compile("com.fasterxml.jackson.core:jackson-databind")
+	compileOnly "org.projectlombok:lombok:1.16.20"
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }

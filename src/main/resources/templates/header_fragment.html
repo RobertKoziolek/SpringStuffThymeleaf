@@ -28,17 +28,17 @@
                     </a>
                 </li>
                 <li class="nav-item" th:classappend="${#strings.contains(activePage,'users')} ? active : ''">
-                    <a class="nav-link" href="/users/view">
+                    <a class="nav-link" href="/users/">
                         Users
                     </a>
                 </li>
                 <li class="nav-item" th:classappend="${#strings.contains(activePage,'add_item')} ? active : ''">
-                    <a class="nav-link" href="/items/add/view">
+                    <a class="nav-link" href="/users/items/add/">
                         Add item
                     </a>
                 </li>
                 <li class="nav-item" th:classappend="${#strings.contains(activePage,'rss')} ? active : ''">
-                    <a class="nav-link" href="/rss/view">
+                    <a class="nav-link" href="/rss/">
                         RSS
                     </a>
                 </li>
