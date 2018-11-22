@@ -71,10 +71,7 @@
                     <td th:text="${user.status}"></td>
                     <td th:text="${user.email}">email</td>
                     <td th:text="${user.age}">age</td>
-                    <td>
-                        <span th:each="i, iterStat : ${user.items}"
-                              th:text="!${iterStat.last} ? ${i.name} + ', ': ${i.name}"></span>
-                    </td>
+                    <td th:text="${#lists.size(user.items)}">number of items</td>
                 </tr>
             </th:block>
             </tbody>

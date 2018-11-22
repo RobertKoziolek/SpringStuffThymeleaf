@@ -28,23 +28,23 @@
                 <th scope="col">Status</th>
                 <th scope="col">Email</th>
                 <th scope="col">Age</th>
-                <th scope="col">Items</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td th:text="${user.id}">id</td>
-                <td th:text="${user.name}"></td>
-                <td th:text="${user.status}"></td>
+                <td th:text="${user.name}">name</td>
+                <td th:text="${user.status}">status</td>
                 <td th:text="${user.email}">email</td>
                 <td th:text="${user.age}">age</td>
-                <td>
-                        <span th:each="i, iterStat : ${user.items}"
-                              th:text="!${iterStat.last} ? ${i.name} + ', ': ${i.name}"></span>
-                </td>
             </tr>
             </tbody>
         </table>
+    </div>
+    <div class="well">
+        <h2>Items</h2>
+        <span th:each="i, iterStat : ${user.items}"
+              th:text="!${iterStat.last} ? ${i.name} + ', ': ${i.name}"></span>
     </div>
 </div>
 </body>

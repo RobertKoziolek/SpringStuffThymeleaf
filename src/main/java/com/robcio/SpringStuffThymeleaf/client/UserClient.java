@@ -48,6 +48,6 @@ public class UserClient {
     }
 
     public Long addItem(final InventoryItemData itemData) {
-        return userRestTemplate.postForObject(configuration.getAddItem(), itemData, Long.class);
+        return userRestTemplate.postForObject(configuration.getAddItem(), itemData, Long.class, itemData.getUserId());
     }
 }
