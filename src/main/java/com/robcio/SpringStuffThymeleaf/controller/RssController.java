@@ -31,6 +31,6 @@ public class RssController {
             final String errorMessage = "RSS server could not be reached";
             model.addAttribute("error", errorMessage);
         }
-        return "rss";
+        return "rss/rss";
     }
 }

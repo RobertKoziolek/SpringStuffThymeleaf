@@ -29,24 +29,25 @@ public class UserController {
     @GetMapping(path = "/")
     public String getAllUsers(final Model model) {
         model.addAttribute("users", userService.getAll());
-        return "users";
+        return "user/users";
     }
 
     @GetMapping(path = "/{userId}")
     public String getUser(@PathVariable final Long userId, final Model model) {
         model.addAttribute("user", userService.getOne(userId));
-        return "user";
+        return "user/user";
     }
 
     @PostMapping(path = "/items/add")
     public String addItem(@ModelAttribute final InventoryItemData itemData) {
-        return "redirect:/users/items/1";
+        final Long itemId = userService.addItem(itemData);
+        return "redirect:/users/";
     }
 
     @GetMapping(path = "/items/add/")
     public String addItemView(final Model model) {
         model.addAttribute("users", userService.getAll());
         model.addAttribute("itemTypes", ItemType.values());
-        return "add_item";
+        return "user/add_item";
     }
 }

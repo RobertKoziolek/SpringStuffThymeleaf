@@ -2,6 +2,7 @@ package com.robcio.SpringStuffThymeleaf.client;
 
 import com.robcio.SpringStuffThymeleaf.configuration.UserRestTemplateConfiguration;
 import com.robcio.SpringStuffThymeleaf.controller.request.UserRequest;
+import com.robcio.SpringStuffThymeleaf.controller.response.InventoryItemData;
 import com.robcio.SpringStuffThymeleaf.controller.response.UserResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -44,5 +45,9 @@ public class UserClient {
 
     public Long addUser(final UserRequest user) {
         return userRestTemplate.postForObject(configuration.getAddUser(), user, Long.class);
+    }
+
+    public Long addItem(final InventoryItemData itemData) {
+        return userRestTemplate.postForObject(configuration.getAddItem(), itemData, Long.class);
     }
 }

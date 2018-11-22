@@ -38,4 +38,8 @@ public class UserService {
     public Long add(final UserRequest user) {
         return userClient.addUser(user);
     }
+
+    public Long addItem(final InventoryItemData itemData) {
+        return userClient.addItem(itemData);
+    }
 }

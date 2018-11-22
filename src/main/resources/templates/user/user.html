@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="container">
-    <header th:replace="header_fragment.html :: header (activePage='users')"></header>
+    <header th:replace="fragment/header_fragment.html :: header (activePage='users')"></header>
     <h1 th:text="${user.name}">User</h1>
     <p>
         Below you can find detailed info about the user.

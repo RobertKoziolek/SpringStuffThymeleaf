@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="container">
-    <header th:replace="header_fragment.html :: header (activePage='rss')"></header>
+    <header th:replace="fragment/header_fragment.html :: header (activePage='rss')"></header>
 
     <h1>RSS feed!</h1>
     <p th:if="${error == null}">

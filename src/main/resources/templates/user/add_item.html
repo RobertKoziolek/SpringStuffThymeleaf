@@ -14,11 +14,11 @@
 </head>
 <body>
 <div class="container">
-    <header th:replace="header_fragment.html :: header (activePage='add_item')"></header>
+    <header th:replace="fragment/header_fragment.html :: header (activePage='add_item')"></header>
     <h1>Item addition!</h1>
     <p>Here, you can add an item to a user's inventory</p>
     <div class="jumbotron">
-        <form class="form-horizontal" method="post" th:action="@{/items/add}" th:object="${item}">
+        <form class="form-horizontal" method="post" th:action="@{/users/items/add}" th:object="${item}">
             <div class="form-group">
                 <label class="control-label col-sm-2" for="user">User:</label>
                 <div class="col-sm-10">
